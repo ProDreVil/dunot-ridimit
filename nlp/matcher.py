@@ -47,6 +47,9 @@ def load_responses(filename):
                 responses[current_intent].append(line)
     return responses
 
+def load_context_responses(filename):
+    return load_responses(filename)
+
 def find_intent(message, intents, patterns):
     cleaned_message = clean_text(message)
     tokens = tokenize(message)
@@ -68,3 +71,20 @@ def find_intent(message, intents, patterns):
             best_score = score
             best_intent = intent
     return best_intent, best_score
+
+def find_all_intents(message, intents):
+    cleaned_message = clean_text(message)
+    tokens = tokenize(message)
+    matched_intents = []
+    for intent, keywords in intents.items():
+        score = 0
+        for keyword, weight in keywords:
+            if " " in keyword:
+                if keyword in cleaned_message:
+                    score += weight
+            elif keyword in tokens:
+                score += weight
+        if score > 0:
+            matched_intents.append((intent, score))
+    matched_intents.sort(key=lambda x: x[1], reverse=True)
+    return matched_intents[:2]

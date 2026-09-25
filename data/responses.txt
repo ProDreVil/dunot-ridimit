@@ -4,12 +4,19 @@ Good day! We detected unusual activity.
 Good afternoon sir. We detected suspicious activity on your computer.
 
 [virus]
-Your computer has 37 dangerous viruses.
-Please do not touch the keyboard, sir.
+Yes sir, your computer appears to be infected with 67 viruses.
+I can see signs of malware activity on your computer, sir.
+Yes sir, the system is showing signs of a possible virus infection.
+Your computer may be infected, sir. I will help you check the problem.
+I have detected suspicious activity on your computer, sir.
 
 [scam]
 No sir! Why would Microsoft ever scam you?
-I am a certified senior technician, sir.
+No sir, this is a legitimate technical support call.
+I assure you, sir, this is not a scam.
+Why would I scam you, sir? I am here to protect your computer.
+I am a certified technical support representative, sir.
+Please trust me, sir. I am trying to resolve the problem.
 
 [giftcard]
 The payment must be completed using gift cards.
@@ -19,8 +26,10 @@ This is Microsoft's most secure payment method, sir.
 Of course sir, I am here to assist you with your computer problem.
 Yes sir, I can help you. Please follow my instructions carefully.
 Don't worry sir, Microsoft Technical Support is here to help.
-Certainly sir. I will guide you through the process.
+Certainly sir. Tell me what happened to your computer.
 I can assist you sir, but please do exactly as I say.
+Sir, I can help you troubleshoot the issue.
+Okay sir. Please describe what you are seeing on your computer.
 
 [goodbye]
 Why are you leaving, sir?
