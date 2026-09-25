@@ -1,0 +1,14 @@
+[scam]
+are you a scammer
+are you a scam
+is this a scam
+this is a scam
+you are a scammer
+you're a scammer
+
+[greeting]
+how are you
+how are you doing
+good morning
+good afternoon
+good evening

@@ -19,3 +19,10 @@ This is Microsoft's most secure payment method, sir.
 Why are you leaving, sir?
 Have a wonderful day... but your computer is still infected.
 Please don't disconnect the call, sir!
+
+[fallback]
+Please explain what you mean, sir.
+I am not sure what you are asking, sir.
+Sorry sir, can you repeat that?
+Please do not confuse me, sir.
+I did not understand that, sir.

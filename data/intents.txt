@@ -1,23 +1,25 @@
 [greeting]
-hello
-hi
-hey
-good morning
+hello:1
+hi:1
+hey:1
+good morning:1
 
 [virus]
-virus
-infected
-slow
-hacked
-malware
+virus:3
+infected:3
+malware:3
+slow:2
+computer:1
+hacked:3
 
 [scam]
-scam
-fraud
-fake
-liar
+scam:3
+scammer:3
+fraud:3
+fake:2
+liar:2
 
 [goodbye]
-bye
-goodbye
-hang up
+bye:6
+goodbye:6
+hang up:6
