@@ -1,22 +1,25 @@
-from nlp.matcher import load_intents, find_intent
+import subprocess, random
+
+from nlp.matcher import load_intents, load_responses, find_intent
+
+def clear_screen():
+    subprocess.run('cls', shell=True)
 
 def main():
+    clear_screen()
     intents = load_intents("data/intents.txt")
-
-    print("=== ScammerBot ===")
-    print("Type 'exit' to leave.\n")
-
+    responses = load_responses("data/responses.txt")
     while True:
         user_input = input("You: ")
-
         if user_input.lower() == "exit":
-            print("Bot: Goodbye, sir.")
+            print("Indian Scammer: Goodbye, sir.")
             break
-
-        intent = find_intent(user_input, intents)
-
-        print("Bot: Detected intent:", intent)
-
+        intent, score = find_intent(user_input, intents)
+        if intent in responses:
+            reply = random.choice(responses[intent])
+        else:
+            reply = "I'm sorry, sir. I don't understand."
+        print("Indian Scammer:", reply)
 
 if __name__ == "__main__":
     main()
