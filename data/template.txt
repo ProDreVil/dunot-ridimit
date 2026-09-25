@@ -1,0 +1,65 @@
+[greet]
+Hello
+Good day
+Good afternoon
+Good morning
+Good evening
+Greetings
+
+[affirmation]
+Yes
+Certainly
+Of course
+Absolutely
+Will do
+Affirmative
+
+[detect_verb]
+detected
+located
+identified
+found
+noticed
+
+[confirm_verb]
+confirmed
+verified
+determined
+
+[deny_verb]
+denied
+rejected
+dismissed
+
+[device]
+computer
+system
+device
+
+[assurance]
+I assure you
+Please trust me
+Don't worry
+
+[support_verb]
+help
+assist
+guide
+support
+troubleshoot
+
+[instruction_verb]
+follow
+describe
+explain
+tell me about
+
+[payment_method]
+gift cards
+gift card payment
+
+[threat]
+malware activity
+a possible virus infection
+suspicious software
+malicious activity

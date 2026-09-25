@@ -1,3 +1,5 @@
+import random
+
 from nlp.preprocess import clean_text
 from nlp.tokenizer import tokenize
 
@@ -47,8 +49,15 @@ def load_responses(filename):
                 responses[current_intent].append(line)
     return responses
 
-def load_context_responses(filename):
+def loader(filename):
     return load_responses(filename)
+
+def apply_template(response, templates):
+    for template_name in templates:
+        placeholder = "{" + template_name + "}"
+        if placeholder in response:
+            response = response.replace(placeholder, random.choice(templates[template_name]))
+    return response
 
 def find_intent(message, intents, patterns):
     cleaned_message = clean_text(message)
