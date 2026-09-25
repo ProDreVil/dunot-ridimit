@@ -1,0 +1,23 @@
+[greeting]
+hello
+hi
+hey
+good morning
+
+[virus]
+virus
+infected
+slow
+hacked
+malware
+
+[scam]
+scam
+fraud
+fake
+liar
+
+[goodbye]
+bye
+goodbye
+hang up

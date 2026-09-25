@@ -1,0 +1,21 @@
+[greeting]
+Hello sir, I'm from Microsoft tech support.
+Good day! We detected unusual activity.
+Good afternoon sir. We detected suspicious activity on your computer.
+
+[virus]
+Your computer has 37 dangerous viruses.
+Please do not touch the keyboard, sir.
+
+[scam]
+No sir! Why would Microsoft ever scam you?
+I am a certified senior technician, sir.
+
+[giftcard]
+The payment must be completed using gift cards.
+This is Microsoft's most secure payment method, sir.
+
+[goodbye]
+Why are you leaving, sir?
+Have a wonderful day... but your computer is still infected.
+Please don't disconnect the call, sir!
