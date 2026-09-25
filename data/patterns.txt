@@ -12,3 +12,12 @@ how are you doing
 good morning
 good afternoon
 good evening
+
+[context]
+what should i do
+what do i do
+how do i fix it
+how can i fix it
+what now
+then what
+now what

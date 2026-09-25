@@ -19,6 +19,13 @@ fraud:3
 fake:2
 liar:2
 
+[help]
+help:3
+assist:2
+assistance:2
+support:2
+guide:2
+
 [goodbye]
 bye:6
 goodbye:6

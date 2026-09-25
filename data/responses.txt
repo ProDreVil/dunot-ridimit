@@ -15,6 +15,13 @@ I am a certified senior technician, sir.
 The payment must be completed using gift cards.
 This is Microsoft's most secure payment method, sir.
 
+[help]
+Of course sir, I am here to assist you with your computer problem.
+Yes sir, I can help you. Please follow my instructions carefully.
+Don't worry sir, Microsoft Technical Support is here to help.
+Certainly sir. I will guide you through the process.
+I can assist you sir, but please do exactly as I say.
+
 [goodbye]
 Why are you leaving, sir?
 Have a wonderful day... but your computer is still infected.
