@@ -12,11 +12,16 @@ def load_intents(filename):
             if not line:
                 continue
             if line.startswith("[") and line.endswith("]"):
-                current_intent = line[1:-1]
-                intents[current_intent] = []
+                current_intent, progress = line[1:-1].split(":")
+                intents[current_intent] = {
+                    "progress": int(progress),
+                    "keywords": []
+                }
             elif current_intent:
                 keyword, weight = line.rsplit(":", 1)
-                intents[current_intent].append((keyword.lower(), int(weight)))
+                intents[current_intent]["keywords"].append(
+                    (keyword.lower(), int(weight))
+                )
     return intents
 
 def load_patterns(filename):
@@ -56,7 +61,10 @@ def apply_template(response, templates):
     for template_name in templates:
         placeholder = "{" + template_name + "}"
         if placeholder in response:
-            response = response.replace(placeholder, random.choice(templates[template_name]))
+            response = response.replace(
+                placeholder,
+                random.choice(templates[template_name])
+            )
     return response
 
 def find_intent(message, intents, patterns):
@@ -68,9 +76,9 @@ def find_intent(message, intents, patterns):
                 return intent, 100
     best_intent = "unknown"
     best_score = 0
-    for intent, keywords in intents.items():
+    for intent, data in intents.items():
         score = 0
-        for keyword, weight in keywords:
+        for keyword, weight in data["keywords"]:
             if " " in keyword:
                 if keyword in cleaned_message:
                     score += weight
@@ -85,9 +93,9 @@ def find_all_intents(message, intents):
     cleaned_message = clean_text(message)
     tokens = tokenize(message)
     matched_intents = []
-    for intent, keywords in intents.items():
+    for intent, data in intents.items():
         score = 0
-        for keyword, weight in keywords:
+        for keyword, weight in data["keywords"]:
             if " " in keyword:
                 if keyword in cleaned_message:
                     score += weight

@@ -34,7 +34,7 @@ Sir, I just need the gift card payment before I can finish helping you.
 {affirmation}, {sir}. I can {support_verb} you through the process.
 Don't worry, {sir}. I am here to {support_verb} you.
 Certainly, {sir}. Tell me what happened to your {device}.
-{sir}, I can {support_verb} you troubleshoot the issue.
+{affirmation} {sir}, I can {support_verb} you troubleshoot the issue.
 Okay {sir}. Please describe what you are seeing on your {device}.
 
 [goodbye]

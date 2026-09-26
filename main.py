@@ -27,9 +27,11 @@ def main():
             break
         multi_intents = find_all_intents(user_input, intents)
         if multi_intents:
-            progress += 1
+            for intent, score in multi_intents:
+                if intent in intents:
+                    progress += intents[intent]["progress"]
         if len(multi_intents) > 1:
-            if progress >= 3:
+            if progress >= 10:
                 giftcard_goal = True
             for intent, score in multi_intents:
                 if intent in responses:
@@ -45,9 +47,9 @@ def main():
             intent = last_intent
         elif intent != "unknown":
             last_intent = intent
-        if not multi_intent_handled and intent not in ["unknown", "greeting", "goodbye"]:
-            progress += 1
-        if progress >= 3:
+        if not multi_intent_handled and intent in intents:
+            progress += intents[intent]["progress"]
+        if progress >= 10 and not giftcard_goal:
             giftcard_goal = True
         tokens = user_input.split()
         needs_clarification = (
@@ -60,11 +62,11 @@ def main():
         if needs_clarification:
             reply = random.choice(responses["clarify"])
             reply = apply_template(reply, templates)
+        elif giftcard_goal and is_context and intent == "help":
+            reply = random.choice(responses["goal_giftcard"])
+            reply = apply_template(reply, templates)
         elif is_context and intent in context_responses:
             reply = random.choice(context_responses[intent])
-            reply = apply_template(reply, templates)
-        elif giftcard_goal and intent == "help":
-            reply = random.choice(responses["goal_giftcard"])
             reply = apply_template(reply, templates)
         elif intent in responses:
             reply = random.choice(responses[intent])

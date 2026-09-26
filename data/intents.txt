@@ -1,10 +1,10 @@
-[greeting]
+[greeting:0]
 hello:1
 hi:1
 hey:1
 good morning:1
 
-[virus]
+[virus:3]
 virus:3
 infected:3
 malware:3
@@ -12,21 +12,21 @@ slow:2
 computer:1
 hacked:3
 
-[scam]
+[scam:-1]
 scam:3
 scammer:3
 fraud:3
 fake:2
 liar:2
 
-[help]
+[help:2]
 help:3
 assist:2
 assistance:2
 support:2
 guide:2
 
-[goodbye]
+[goodbye:0]
 bye:6
 goodbye:6
 hang up:6
