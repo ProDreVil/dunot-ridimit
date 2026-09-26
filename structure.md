@@ -4,9 +4,6 @@
         ├── intents.txt
         ├── patterns.txt
         ├── responses.txt
-    └── 📁engine
-        ├── chatbot.py
-        ├── context.py
     └── 📁nlp
         ├── matcher.py
         ├── preprocess.py

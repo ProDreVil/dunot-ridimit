@@ -6,12 +6,23 @@ Good morning
 Good evening
 Greetings
 
+[sir]
+sir
+kind sir
+my friend
+respected sir
+
+[intro_detect]
+I have
+I can
+The system has
+Microsoft has
+
 [affirmation]
 Yes
 Certainly
 Of course
 Absolutely
-Will do
 Affirmative
 
 [detect_verb]

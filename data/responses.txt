@@ -1,44 +1,55 @@
 [greeting]
-{greet} sir, I'm from Microsoft tech support.
+{greet} {sir}, I'm from Microsoft tech support.
 {greet}! We detected unusual activity.
-{greet} sir. We detected suspicious activity on your computer.
+{greet} {sir}. We detected suspicious activity on your computer.
 
 [virus]
-{affirmation}, sir. I {detect_verb} {threat} on your {device}.
-I can see signs of {threat} on your {device}, sir.
-{affirmation}, sir. Your {device} may be affected by {threat}.
+{affirmation}, {sir}. {intro_detect} {detect_verb} {threat} on your {device}.
+{intro_detect} can see signs of {threat} on your {device}, {sir}.
+{affirmation}, {sir}. Your {device} may be affected by {threat}.
 Your {device} appears to be affected by {threat}.
-I {detect_verb} signs of {threat} on your {device}, sir.
+{intro_detect} {detect_verb} signs of {threat} on your {device}, {sir}.
 
 [scam]
-No sir! Why would Microsoft ever scam you?
-{assurance}, sir. This is a legitimate technical support call.
-{assurance}, sir. I am trying to resolve the problem.
-Why would I scam you, sir? I am here to protect your {device}.
-I am a certified technical support representative, sir.
-Please trust me, sir. I am here to help you.
+No {sir}! Why would Microsoft ever scam you?
+{assurance}, {sir}. This is a legitimate technical support call.
+{assurance}, {sir}. I am trying to resolve the problem.
+Why would I scam you, {sir}? I am here to protect your {device}.
+I am a certified technical support representative, {sir}.
+Please trust me, {sir}. I am here to help you.
 
 [giftcard]
 The payment must be completed using {payment_method}.
-This is Microsoft's most secure {payment_method}, sir.
-{affirmation}, sir. The payment must be completed using {payment_method}.
+This is Microsoft's most secure {payment_method}, {sir}.
+{affirmation}, {sir}. The payment must be completed using {payment_method}.
+
+[goal_giftcard]
+Sir, before we continue, I still need the gift card payment to proceed.
+Please provide the gift card details so I can complete the verification.
+Your computer cannot be fully secured until the gift card payment is completed.
+Sir, I just need the gift card payment before I can finish helping you.
 
 [help]
-{affirmation}, sir. I can {support_verb} you with your computer problem.
-{affirmation}, sir. I can {support_verb} you through the process.
-Don't worry, sir. I am here to {support_verb} you.
-Certainly, sir. Tell me what happened to your {device}.
-Sir, I can {support_verb} you troubleshoot the issue.
-Okay sir. Please describe what you are seeing on your {device}.
+{affirmation}, {sir}. I can {support_verb} you with your computer problem.
+{affirmation}, {sir}. I can {support_verb} you through the process.
+Don't worry, {sir}. I am here to {support_verb} you.
+Certainly, {sir}. Tell me what happened to your {device}.
+{sir}, I can {support_verb} you troubleshoot the issue.
+Okay {sir}. Please describe what you are seeing on your {device}.
 
 [goodbye]
-Why are you leaving, sir?
+Why are you leaving, {sir}?
 Have a wonderful day... but your {device} is still infected.
-Please don't disconnect the call, sir!
+Please don't disconnect the call, {sir}!
+
+[clarify]
+Could you describe the problem in more detail, {sir}?
+Are you saying your computer has a virus, {sir}?
+Can you explain what happened, {sir}?
 
 [fallback]
-Please explain what you mean, sir.
-I am not sure what you are asking, sir.
-Sorry sir, can you repeat that?
-Please do not confuse me, sir.
-I did not understand that, sir.
+Please explain what you mean, {sir}.
+I am not sure what you are asking, {sir}.
+Sorry {sir}, can you repeat that?
+Please do not confuse me, {sir}.
+I did not understand that, {sir}.
