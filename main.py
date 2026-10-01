@@ -1,6 +1,7 @@
 import subprocess, random
 
 from nlp.matcher import *
+from nlp.regex import *
 
 def clear_screen():
     subprocess.run('cls', shell=True)
@@ -20,6 +21,12 @@ def main():
     print("Indian Scammer:", reply)
     while True:
         user_input = input("You: ")
+        regex_intent = detect_regex(user_input)
+        money = extract_money(user_input)
+        money_value = None
+        if money:
+            money_value = re.search(r"\d+(?:,\d{3})*(?:\.\d+)?", money).group()
+            money_value = float(money_value.replace(",", ""))
         if user_input.lower() == "exit":
             reply = random.choice(responses["goodbye"])
             reply = apply_template(reply, templates)
@@ -41,6 +48,10 @@ def main():
             continue
         multi_intent_handled = len(multi_intents) > 1
         intent, score = find_intent(user_input, intents, patterns)
+        text = user_input.lower().strip()
+        is_yes = regex_intent == "yes"
+        is_no = regex_intent == "no"
+        is_question = regex_intent == "question"
         is_context = False
         if intent == "context" and last_intent is not None:
             is_context = True
@@ -53,16 +64,30 @@ def main():
             giftcard_goal = True
         tokens = user_input.split()
         needs_clarification = (
-            intent != "unknown"
+            not is_question
+            and intent != "unknown"
             and intent not in ["greeting", "goodbye", "help"]
             and score > 0
-            and score <= 3
+            and score <= 10
             and len(tokens) <= 2
         )
-        if needs_clarification:
+        if money_value is not None:
+            if money_value < 100:
+                reply = random.choice(responses["low_money"])
+            else:
+                reply = random.choice(responses["money"])
+
+            reply = reply.replace("{money}", money)
+        elif needs_clarification:
             reply = random.choice(responses["clarify"])
             reply = apply_template(reply, templates)
-        elif giftcard_goal and is_context and intent == "help":
+        elif giftcard_goal and is_yes:
+            reply = random.choice(responses["giftcard_yes"])
+            reply = apply_template(reply, templates)
+        elif giftcard_goal and is_no:
+            reply = random.choice(responses["giftcard_no"])
+            reply = apply_template(reply, templates)
+        elif giftcard_goal and is_context:
             reply = random.choice(responses["goal_giftcard"])
             reply = apply_template(reply, templates)
         elif is_context and intent in context_responses:

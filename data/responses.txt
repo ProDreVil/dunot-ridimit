@@ -29,6 +29,24 @@ Please provide the gift card details so I can complete the verification.
 Your computer cannot be fully secured until the gift card payment is completed.
 Sir, I just need the gift card payment before I can finish helping you.
 
+[giftcard_yes]
+Excellent, {sir}. Please prepare the gift card.
+Thank you, {sir}. We can continue with the payment.
+
+[giftcard_no]
+I understand, {sir}, but the gift card is still required.
+Without the gift card, I cannot complete the verification.
+
+[money]
+I see you have {money}, sir. Let us continue with the verification.
+Thank you for providing that information, sir. We can continue.
+
+[low_money]
+That amount may not be sufficient, sir. Let us continue with the verification.
+
+[no_money]
+I understand, sir. We can continue with the verification process.
+
 [help]
 {affirmation}, {sir}. I can {support_verb} you with your computer problem.
 {affirmation}, {sir}. I can {support_verb} you through the process.

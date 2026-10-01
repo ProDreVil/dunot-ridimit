@@ -1,4 +1,4 @@
-import random
+import random, re
 
 from nlp.preprocess import clean_text
 from nlp.tokenizer import tokenize

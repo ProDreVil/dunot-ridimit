@@ -15,7 +15,9 @@ good evening
 
 [context]
 what should i do
+what do you want me to do
 what do i do
+how
 how do i fix it
 how can i fix it
 what now
