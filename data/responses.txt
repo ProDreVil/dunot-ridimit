@@ -65,6 +65,25 @@ Could you describe the problem in more detail, {sir}?
 Are you saying your computer has a virus, {sir}?
 Can you explain what happened, {sir}?
 
+[followup_explanation]
+The {topic} I mentioned refers to {description}, sir.
+What I detected is related to {topic} on your computer.
+
+[followup_reason]
+The {topic} may be caused by suspicious activity on your computer.
+This is why I recommended checking your system, sir.
+
+[followup_solution]
+I can guide you through checking the {topic}, sir.
+First, we need to identify what is causing the problem.
+
+[followup_danger]
+The {topic} can potentially cause problems if it is left unchecked, sir.
+That is why I recommend addressing it carefully.
+
+[followup_confirmation]
+Yes, sir. I am referring to the {topic} I mentioned earlier.
+
 [fallback]
 Please explain what you mean, {sir}.
 I am not sure what you are asking, {sir}.

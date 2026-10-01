@@ -1,12 +1,22 @@
 [virus]
-Please stay calm {sir}. I will {support_verb} you through fixing the {threat} on your {device}.
-First, {sir}, do not turn off the {device}.
-You must follow my instructions carefully, {sir}.
+There is {threat} on your {device}, sir.
+Your {device} has {threat}, sir.
+I detected {threat} on your {device}, sir.
 
 [scam]
 {affirmation} {sir}, I assure you this is completely legitimate.
-Please trust me, {sir}. I am trying to protect your computer.
+Please trust me, {sir}. I am trying to protect your {device}.
 
 [help]
 {assurance}, {sir}. Tell me what problem you are experiencing.
 I am ready to {support_verb} you, {sir}.
+
+[explanation]
+There is {threat} on your {device}, {sir}.
+I detected {threat} on your {device}, {sir}.
+Your {device} has {threat}, {sir}.
+
+[solution]
+You should let me help you remove the {threat}, {sir}.
+I will guide you through fixing your {device}, {sir}.
+You should follow my instructions carefully, {sir}.
