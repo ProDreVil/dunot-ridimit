@@ -6,6 +6,31 @@ this is a scam
 you are a scammer
 you're a scammer
 
+[computer_problem]
+my computer is slow
+my computer is freezing
+my computer keeps crashing
+my computer is stuck
+my computer is not responding
+my computer is broken
+my computer has an error
+my pc is slow
+my pc keeps crashing
+my system is not working
+my computer keeps freezing
+my computer keeps restarting
+my computer keeps shutting down
+my computer is lagging
+my computer is glitching
+my computer keeps showing errors
+my computer has lots of popups
+my pc keeps freezing
+my pc keeps restarting
+my pc is lagging
+my system keeps crashing
+my system keeps restarting
+my system is acting strange
+
 [greeting]
 how are you
 how are you doing
@@ -33,3 +58,62 @@ what is it
 what is this
 what does that mean
 what does it mean
+is my computer safe
+is my computer secure
+is my computer protected
+is my system safe
+is my system secure
+how do i protect my computer
+how can i secure my computer
+is my computer in danger
+
+[identity]
+who is this
+who are you
+who is calling
+what is your name
+what's your name
+who do you work for
+what company are you from
+are you from microsoft
+
+[purpose]
+what do you want
+why are you calling
+why did you call
+why are you calling me
+what is this about
+what's this about
+what is the reason for the call
+why did microsoft call me
+what do you need
+
+[reason]
+why
+why is that
+why do you need to know
+why do you need that
+why is this happening
+
+[apology]
+sorry
+sorry about that
+my apologies
+i apologize
+
+[acknowledgement]
+okay
+ok
+alright
+sure
+understood
+got it
+i understand
+
+[how_so]
+how so
+how is that
+how did you find that
+how do you know
+how can you tell
+what makes you say that

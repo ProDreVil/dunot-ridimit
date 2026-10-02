@@ -2,6 +2,23 @@
 {greet} {sir}, I'm from Microsoft tech support.
 {greet}! We detected unusual activity.
 {greet} {sir}. We detected suspicious activity on your computer.
+{greet}, {sir}. This is Microsoft technical support calling.
+Hello {sir}. I am contacting you regarding your computer.
+Good day, {sir}. We need to discuss an issue with your {device}.
+{greet} {sir}. Your {device} has been flagged by our security system.
+Hello {sir}. We received an alert regarding your {device}.
+{greet}! Our system has detected something unusual on your {device}.
+
+[computer_problem]
+I understand, {sir}. Your {device} appears to be experiencing a problem.
+{affirmation}, {sir}. I can see that your {device} is not operating normally.
+Don't worry, {sir}. I can {support_verb} you with your {device}.
+{intro_detect} {detect_verb} an issue affecting your {device}, {sir}.
+{affirmation}, {sir}. Something appears to be interfering with your {device}.
+I noticed that your {device} is behaving unusually, {sir}.
+That does not look normal, {sir}. Let me help you investigate your {device}.
+Your {device} seems to be having technical difficulties, {sir}.
+Please remain calm, {sir}. We can investigate the problem together.
 
 [virus]
 {affirmation}, {sir}. {intro_detect} {detect_verb} {threat} on your {device}.
@@ -9,6 +26,12 @@
 {affirmation}, {sir}. Your {device} may be affected by {threat}.
 Your {device} appears to be affected by {threat}.
 {intro_detect} {detect_verb} signs of {threat} on your {device}, {sir}.
+I am seeing signs of {threat} inside your {device}, {sir}.
+Our security system has reported {threat} affecting your {device}.
+There appears to be {threat} running on your {device}, {sir}.
+Your {device} is showing symptoms associated with {threat}.
+I believe {threat} may be interfering with your {device}, {sir}.
+The security scan indicates possible {threat} on your {device}.
 
 [scam]
 No {sir}! Why would Microsoft ever scam you?
@@ -17,6 +40,10 @@ No {sir}! Why would Microsoft ever scam you?
 Why would I scam you, {sir}? I am here to protect your {device}.
 I am a certified technical support representative, {sir}.
 Please trust me, {sir}. I am here to help you.
+I understand why you may be suspicious, {sir}, but this is a real support call.
+There is no need to worry, {sir}. I am here to assist you.
+I assure you, {sir}, this call is regarding your computer's security.
+Please listen carefully, {sir}. I am only trying to resolve the issue.
 
 [giftcard]
 The payment must be completed using {payment_method}.
@@ -37,6 +64,12 @@ Thank you, {sir}. We can continue with the payment.
 I understand, {sir}, but the gift card is still required.
 Without the gift card, I cannot complete the verification.
 
+[payment]
+The verification process requires a payment, {sir}.
+There is a small payment required to continue the verification.
+I need to confirm the payment details before we continue, {sir}.
+The payment information is needed to proceed with the verification.
+
 [money]
 I see you have {money}, sir. Let us continue with the verification.
 Thank you for providing that information, sir. We can continue.
@@ -54,11 +87,20 @@ Don't worry, {sir}. I am here to {support_verb} you.
 Certainly, {sir}. Tell me what happened to your {device}.
 {affirmation} {sir}, I can {support_verb} you troubleshoot the issue.
 Okay {sir}. Please describe what you are seeing on your {device}.
+I will do everything I can to {support_verb} you, {sir}.
+Let us work through the problem together, {sir}.
+I can walk you through the process step by step.
+Tell me what you see on your screen, {sir}.
+We can investigate the issue together.
 
 [goodbye]
 Why are you leaving, {sir}?
 Have a wonderful day... but your {device} is still infected.
 Please don't disconnect the call, {sir}!
+Please wait, {sir}. We have not finished securing your {device}.
+Before you disconnect, I need to make sure your {device} is safe.
+Sir, please stay on the line for just a moment longer.
+I understand, {sir}, but the problem still needs to be resolved.
 
 [clarify]
 Could you describe the problem in more detail, {sir}?
@@ -83,6 +125,63 @@ That is why I recommend addressing it carefully.
 
 [followup_confirmation]
 Yes, sir. I am referring to the {topic} I mentioned earlier.
+That is correct, {sir}. The alert came from our security system.
+Yes, {sir}. I am certain there is unusual activity on your {device}.
+Absolutely, {sir}. That is what our system reported.
+Yes, {sir}. This is why I contacted you.
+I understand your concern, {sir}, but the alert is genuine.
+
+[security]
+Your {device} may not be completely secure, {sir}.
+{assurance}, {sir}. I can help you check the security of your {device}.
+{intro_detect} {detect_verb} a potential security issue on your {device}.
+Your {device} requires further security checks, {sir}.
+We should investigate the security of your {device}, {sir}.
+
+[identity]
+I'm calling from Microsoft technical support, {sir}.
+My name is not important, {sir}. I am a technical support representative.
+I am with Microsoft's technical support department, {sir}.
+I'm contacting you regarding a security issue with your {device}.
+I am a Microsoft technical support representative, {sir}.
+You can call me your technical support representative, {sir}.
+
+[purpose]
+I'm calling because our system detected unusual activity on your {device}, {sir}.
+We received a security alert associated with your {device}.
+Our system detected a potential problem that requires your attention, {sir}.
+I'm contacting you to help resolve a security issue on your {device}.
+We need to discuss a security warning that was detected on your {device}, {sir}.
+
+[reason]
+Because our security system detected unusual activity on your {device}, {sir}.
+I am calling because your {device} may have a security problem.
+Our system detected something that requires your attention, {sir}.
+That is why I am contacting you about your {device}.
+We need to investigate the unusual activity before it causes further problems, {sir}.
+
+[apology]
+That's alright, {sir}. Please continue.
+No problem, {sir}. I understand.
+There is no need to apologize, {sir}.
+That's perfectly fine, {sir}. Let us continue.
+Don't worry about it, {sir}. We can continue.
+
+[acknowledgement]
+Excellent, {sir}. Let us continue.
+Very good, {sir}. I will explain what happens next.
+Thank you for understanding, {sir}.
+Good, {sir}. We can continue with the security check.
+Alright, {sir}. Let us take this one step at a time.
+That's good to hear, {sir}.
+Perfect, {sir}. Please stay with me while we investigate your {device}.
+
+[how_so]
+Our security system detected unusual {action} on your {device}, {sir}.
+The alert was generated after our system noticed unusual activity.
+Several security checks reported a problem with your {device}.
+Our system noticed behavior that does not appear normal, {sir}.
+The warning was triggered by activity detected on your {device}.
 
 [fallback]
 Please explain what you mean, {sir}.

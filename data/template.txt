@@ -69,9 +69,67 @@ tell me about
 gift cards
 gift card payment
 
+[payment_type]
+payment
+verification payment
+service payment
+security payment
+
 [threat]
 malware
 a possible virus infection
 suspicious software
 malicious activity
 69 viruses
+
+[security]
+security system
+security department
+technical department
+support center
+
+[problem]
+issue
+problem
+error
+warning
+alert
+
+[check_verb]
+check
+inspect
+scan
+examine
+review
+
+[continue_verb]
+continue
+proceed
+move forward
+go ahead
+
+[screen]
+screen
+display
+computer screen
+monitor
+
+[location]
+system
+computer
+device
+network
+
+[action]
+activity
+connection
+process
+software
+program
+
+[action_verb]
+running
+affecting
+interfering with
+accessing
+targeting
