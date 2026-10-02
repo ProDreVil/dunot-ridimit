@@ -5,7 +5,7 @@ def detect_regex(message):
     patterns = {
         "yes": r"^(yes|yeah|yep|yup|sure|correct|alright|okay|ok|of course|absolutely|certainly|that's right|that is right)( sir| please)?[.!]?$",
         "no": r"^(no|nope|nah|never|not really|i don't think so|not at all|of course not|absolutely not|i refuse)( sir| please)?[.!]?$",
-        "solution": r"^(how|what|where)\b.*\b(do|fix|solve|handle|deal with|remove|repair|resolve|need to do|should i do)\b.*$",
+        "solution": r"^(how|what|where|you should|can you|please)\b.*\b(do|fix|solve|handle|deal with|remove|repair|resolve|need to do|should i do|instructions|steps|proceed)\b.*$",
         "question": r"^(what|why|how|when|where|who|can|could|should|do|does|is|are|will|would)\b.*\??$",
         "request": r"^(please\s+)?(can you|could you|would you|will you|please|help|assist|tell|show|explain|give|provide)\b.*$",
         "explanation": r"^(what is|what's|what does|what do you mean|what was|what happened|what's wrong|what is wrong|can you explain|could you explain|tell me what|tell me about)\b.*$",

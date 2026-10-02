@@ -26,3 +26,27 @@ Now {sir}, please open your {device} settings.
 Now {sir}, I need you to check your {device} carefully.
 Please follow my instructions, {sir}.
 I need you to stay on the line while we check your {device}.
+
+[computer_problem_explanation]
+Your {device} appears to be experiencing {current_problem}, {sir}.
+The issue may be related to something interfering with your {device}.
+Our system detected unusual behavior from your {device}.
+There may be a software-related issue affecting your {device}, {sir}.
+The {current_problem} may be caused by software interfering with your {device}.
+I believe the {current_problem} is related to something affecting your {device}.
+Our system is investigating the cause of the {current_problem}, {sir}.
+The {current_problem} may be causing the issue on your {device}, {sir}.
+The {current_problem} appears to be affecting the normal operation of your {device}.
+I believe the {current_problem} is related to the unusual behavior we detected.
+
+[computer_problem_solution]
+I can help you troubleshoot the {current_problem}, {sir}.
+We should check your {device} to determine what is causing the problem.
+I will guide you through a few checks on your {device}.
+We need to identify what is interfering with your {device}.
+
+[computer_problem_instructions]
+First, please check your {device} settings, {sir}.
+Now I need you to look for anything unusual on your {device}.
+Please keep your {device} open while we investigate the problem.
+Follow my instructions carefully, {sir}, and we will check the issue.

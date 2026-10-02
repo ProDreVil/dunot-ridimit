@@ -39,10 +39,20 @@ def send_response(response_list, templates):
     print("Tech Scammer:", reply)
     return reply
 
+def get_context_response(context_type, intent, context_responses):
+    if intent == "computer_problem":
+        key = f"computer_problem_{context_type}"
+        if key in context_responses:
+            return random.choice(context_responses[key])
+    key = context_type
+    if key in context_responses:
+        return random.choice(context_responses[key])
+    return None
+
 def select_response(
     money_value, money, needs_clarification, giftcard_goal, goal_just_activated,
-    is_yes, is_no, is_context, is_explanation, is_solution, intent, last_context,
-    responses, context_responses, templates
+    is_yes, is_no, is_context, is_explanation, is_solution, intent, last_intent, last_context,
+    problem, last_problem, responses, context_responses, templates
 ):
     if goal_just_activated:
         reply = random.choice(responses["goal_giftcard"])
@@ -61,19 +71,39 @@ def select_response(
         reply = random.choice(responses["giftcard_no"])
     elif giftcard_goal and is_context:
         reply = random.choice(responses["goal_giftcard"])
+    elif is_context and last_context in ["solution", "instructions"] and is_yes:
+        reply = get_context_response("instructions", intent, context_responses)
+    elif is_context and is_yes and last_intent == "computer_problem" and last_context is None:
+        reply = get_context_response("explanation", intent, context_responses)
     elif is_context and is_explanation:
-        reply = random.choice(context_responses["explanation"])
+        reply = get_context_response("explanation", intent, context_responses)
     elif is_context and is_solution:
-        reply = random.choice(context_responses["solution"])
-    elif is_context and last_context == "solution" and is_yes:
-        reply = random.choice(context_responses["instructions"])
+        reply = get_context_response("solution", intent, context_responses)
     elif is_context and intent in context_responses:
         reply = random.choice(context_responses[intent])
     elif intent in responses:
         reply = random.choice(responses[intent])
     else:
         reply = random.choice(responses["fallback"])
-    return apply_template(reply, templates)
+    reply = apply_template(reply, templates)
+    reply = reply.replace("{current_problem}", problem)
+    return reply
+
+def format_problem(problem):
+    if not problem:
+        return "problem"
+    problem = problem.lower()
+    if "slow" in problem:
+        return "slow performance"
+    if "freez" in problem:
+        return "freezing"
+    if "crash" in problem:
+        return "crashing"
+    if "lag" in problem:
+        return "lagging"
+    if "popup" in problem:
+        return "unwanted popups"
+    return "the issue you described"
 
 def process_money(message):
     money = extract_money(message)
@@ -125,6 +155,7 @@ def main():
     templates = loader("data/template.txt")
     last_intent = "virus"
     last_context = None
+    last_problem = None
     last_response = None
     progress = 0
     giftcard_goal = False
@@ -156,11 +187,18 @@ def main():
         goal_just_activated = False
         # print(f"[DEBUG] Intent: {intent} | Score: {score}")
         is_context = False
-        if (intent == "context" or is_explanation or is_solution) and last_intent is not None:
+        if is_yes and last_intent is not None:
+            is_context = True
+            intent = last_intent
+        elif (intent == "context" or is_explanation or is_solution) and last_intent is not None:
             is_context = True
             intent = last_intent
         elif intent != "unknown":
-            last_intent = intent
+            if intent not in ["acknowledgement", "apology"]:
+                last_intent = intent
+            if intent == "computer_problem":
+                last_problem = user_input
+        problem = format_problem(last_problem)
         previous_goal = giftcard_goal
         if not is_context:
             progress = update_single_progress(progress, intent, intents)
@@ -188,7 +226,10 @@ def main():
             is_explanation=is_explanation,
             is_solution=is_solution,
             intent=intent,
+            last_intent=last_intent,
             last_context=last_context,
+            problem=problem,
+            last_problem=last_problem,
             responses=responses,
             context_responses=context_responses,
             templates=templates
@@ -196,8 +237,13 @@ def main():
         last_response = reply
         if is_explanation:
             last_context = "explanation"
+            progress = update_context_progress(progress, "explanation")
         elif is_solution:
             last_context = "solution"
+            progress = update_context_progress(progress, "solution")
+        elif is_yes and is_context and last_context == "solution":
+            last_context = "instructions"
+            progress = update_context_progress(progress, "instructions")
         print("Tech Scammer:", reply)
 
 if __name__ == "__main__":
