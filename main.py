@@ -41,7 +41,7 @@ def send_response(response_list, templates):
 
 def select_response(
     money_value, money, needs_clarification, giftcard_goal, goal_just_activated,
-    is_yes, is_no, is_context, is_explanation, is_solution, intent,
+    is_yes, is_no, is_context, is_explanation, is_solution, intent, last_context,
     responses, context_responses, templates
 ):
     if goal_just_activated:
@@ -65,6 +65,8 @@ def select_response(
         reply = random.choice(context_responses["explanation"])
     elif is_context and is_solution:
         reply = random.choice(context_responses["solution"])
+    elif is_context and last_context == "solution" and is_yes:
+        reply = random.choice(context_responses["instructions"])
     elif is_context and intent in context_responses:
         reply = random.choice(context_responses[intent])
     elif intent in responses:
@@ -100,6 +102,14 @@ def update_single_progress(progress, intent, intents):
         progress += intents[intent]["progress"]
     return progress
 
+def update_context_progress(progress, context_type):
+    context_progress = {
+        "explanation": 1,
+        "solution": 2,
+        "instructions": 3
+    }
+    return progress + context_progress.get(context_type, 0)
+
 def check_goal(progress):
     return progress >= 10
 
@@ -114,6 +124,7 @@ def main():
     context_responses = loader("data/context.txt")
     templates = loader("data/template.txt")
     last_intent = "virus"
+    last_context = None
     last_response = None
     progress = 0
     giftcard_goal = False
@@ -143,9 +154,9 @@ def main():
             continue
         intent, score = find_intent(user_input, intents, patterns)
         goal_just_activated = False
-        print(f"[DEBUG] Intent: {intent} | Score: {score}")
+        # print(f"[DEBUG] Intent: {intent} | Score: {score}")
         is_context = False
-        if intent == "context" and last_intent is not None:
+        if (intent == "context" or is_explanation or is_solution) and last_intent is not None:
             is_context = True
             intent = last_intent
         elif intent != "unknown":
@@ -153,7 +164,7 @@ def main():
         previous_goal = giftcard_goal
         if not is_context:
             progress = update_single_progress(progress, intent, intents)
-        print(f"[DEBUG] Progress: {progress}")
+        # print(f"[DEBUG] Progress: {progress}")
         giftcard_goal = check_goal(progress)
         goal_just_activated = giftcard_goal and not previous_goal
         tokens = user_input.split()
@@ -177,11 +188,16 @@ def main():
             is_explanation=is_explanation,
             is_solution=is_solution,
             intent=intent,
+            last_context=last_context,
             responses=responses,
             context_responses=context_responses,
             templates=templates
         )
         last_response = reply
+        if is_explanation:
+            last_context = "explanation"
+        elif is_solution:
+            last_context = "solution"
         print("Tech Scammer:", reply)
 
 if __name__ == "__main__":

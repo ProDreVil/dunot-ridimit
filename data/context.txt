@@ -20,3 +20,9 @@ Your {device} has {threat}, {sir}.
 You should let me help you remove the {threat}, {sir}.
 I will guide you through fixing your {device}, {sir}.
 You should follow my instructions carefully, {sir}.
+
+[instructions]
+Now {sir}, please open your {device} settings.
+Now {sir}, I need you to check your {device} carefully.
+Please follow my instructions, {sir}.
+I need you to stay on the line while we check your {device}.
