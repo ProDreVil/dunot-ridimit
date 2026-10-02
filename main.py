@@ -165,6 +165,7 @@ def main():
         if user_input is None:
             break
         regex_intent = detect_regex(user_input)
+        print(f"[DEBUG] Regex: {regex_intent}")
         money, money_value = process_money(user_input)
         is_yes, is_no, is_question, is_explanation, is_solution = interpret_regex(regex_intent)
         if user_input.lower() == "exit":
@@ -184,9 +185,10 @@ def main():
                     last_response = send_response(responses[intent], templates)
             continue
         intent, score = find_intent(user_input, intents, patterns)
+        print(f"[DEBUG] Intent: {intent} | Score: {score}")
         goal_just_activated = False
-        # print(f"[DEBUG] Intent: {intent} | Score: {score}")
         is_context = False
+        print(f"[DEBUG] Before context: last_intent={last_intent} | last_context={last_context}")
         if is_yes and last_intent is not None:
             is_context = True
             intent = last_intent
@@ -194,7 +196,7 @@ def main():
             is_context = True
             intent = last_intent
         elif intent != "unknown":
-            if intent not in ["acknowledgement", "apology"]:
+            if intent not in ["acknowledgement", "apology", "reason"]:
                 last_intent = intent
             if intent == "computer_problem":
                 last_problem = user_input
