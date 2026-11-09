@@ -1,2 +1,2 @@
-# dunot-ridimit
+# Dunot Ridimit
 Tech Support Scammer Chatbot
