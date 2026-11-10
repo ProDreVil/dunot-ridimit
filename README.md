@@ -1,2 +1,2 @@
 # Dunot Ridimit
-Tech Support Scammer Chatbot
+Tech Support Scammer Chatbot Parody
